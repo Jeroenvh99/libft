@@ -65,7 +65,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
 	int		end;
-	char	*c;
 
 	i = getstart(s1, set);
 	end = getlast(s1, set);
