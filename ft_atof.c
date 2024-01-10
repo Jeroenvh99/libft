@@ -6,7 +6,7 @@
 /*   By: jvan-hal <jvan-hal@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/10 12:05:39 by jvan-hal      #+#    #+#                 */
-/*   Updated: 2024/01/10 12:10:40 by jvan-hal      ########   odam.nl         */
+/*   Updated: 2024/01/10 14:33:50 by jvan-hal      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ double	ft_atof(char *str)
 	significant = 0;
 	while (*str)
 	{
-		if (!ft_isdigit(*str) && *str != '.')
+		if (!ft_isdigit(*str) && *str != '.' && val > 0)
 			break ;
 		if (*str != '.')
 		{
