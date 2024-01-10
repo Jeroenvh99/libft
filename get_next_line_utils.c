@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
-#include"libft.h"
+#include "libft.h"
+#include <stdlib.h>
 
 int	gnl_strlen(const char *s)
 {

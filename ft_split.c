@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
-#include<stdlib.h>
+#include "libft.h"
+#include <stdlib.h>
 
 static int	getarrlength(const char *s, char dlm)
 {
@@ -42,8 +42,7 @@ static char	*getsplit(const char **s, char dlm)
 	prevc = dlm;
 	while (i == 0 || s[0][i - 1])
 	{
-		if ((s[0][i] == dlm && prevc != dlm) || (!(s[0][i])
-			&& prevc != dlm))
+		if ((s[0][i] == dlm && prevc != dlm) || (!(s[0][i]) && prevc != dlm))
 		{
 			split = ft_substr(s[0], 0, i);
 			if (!split)

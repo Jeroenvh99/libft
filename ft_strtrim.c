@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
-#include<stdlib.h>
+#include "libft.h"
+#include <stdlib.h>
 
 static int	getstart(const char *s, const char *set)
 {
@@ -63,8 +63,8 @@ static int	getlast(const char *s, const char *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
-	int		end;
+	int	i;
+	int	end;
 
 	i = getstart(s1, set);
 	end = getlast(s1, set);

@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
-#include<limits.h>
-#include<stdlib.h>
-#include<stdio.h>
-#include"libft.h"
+#include "libft.h"
+#include <limits.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 static int	getstart(char **newline, char **leftstr)
 {
@@ -83,7 +83,7 @@ static char	*copyleftstr(char *buffer, int bytesread, int nlindex)
 }
 
 static int	processbuffer(char **newline, char *buffer, char **leftstr,
-	int bytesread)
+		int bytesread)
 {
 	int	nlindex;
 

@@ -1,35 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstmap.c                                        :+:    :+:            */
+/*   ft_atof.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jvan-hal <jvan-hal@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/11 10:39:56 by jvan-hal      #+#    #+#                 */
-/*   Updated: 2022/10/25 08:53:08 by jvan-hal      ########   odam.nl         */
+/*   Created: 2024/01/10 12:05:39 by jvan-hal      #+#    #+#                 */
+/*   Updated: 2024/01/10 12:10:40 by jvan-hal      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+double	ft_atof(char *str)
 {
-	t_list	*newlist;
-	t_list	*newnode;
+	double	val;
+	int		significant;
 
-	if (!lst || !f || !del)
-		return (NULL);
-	newlist = NULL;
-	while (lst)
+	val = 0;
+	significant = 0;
+	while (*str)
 	{
-		newnode = ft_lstnew(((*f)(lst->content)));
-		if (!newnode)
+		if (!ft_isdigit(*str) && *str != '.')
+			break ;
+		if (*str != '.')
 		{
-			ft_lstclear(&newlist, del);
-			return (NULL);
+			val = (val * 10) + (*str - '0');
+			if (significant > 0)
+				significant *= 10;
 		}
-		ft_lstadd_back(&newlist, newnode);
-		lst = lst->next;
+		else
+		{
+			if (significant > 0)
+				return (0);
+			significant = 1;
+		}
+		++str;
 	}
-	return (newlist);
+	val /= significant;
+	return (val);
 }

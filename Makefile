@@ -6,6 +6,7 @@ PRINTF_OBJS = ${PRINTF_SRCS:.c=.o}
 GNL_OBJS = ${GNL_SRCS:.c=.o}
 SRCS = ft_strjoin.c\
 	ft_atoi.c\
+	ft_atof.c\
 	ft_strlcat.c\
 	ft_bzero.c\
 	ft_strlcpy.c\
@@ -79,6 +80,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: clean fclean all bonus re
-
-test:
-	cc libfttester.c libft.a && ./a.out
